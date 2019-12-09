@@ -1,0 +1,27 @@
+<%= provide(:title, "Cart") %>
+<% if @cart.empty? %>
+<p>You have not added any products</p>
+<%end%>
+
+<div id = "itemsContainer">
+    <table id = "customers">
+        <% total=0 %>
+        <% @cart.each do |id, quantity|%>
+        <%item= Item.find_by_id(id)%>
+        <tr>
+            <td class= "image"><%= link_to (image_tag item.image_url, :style => "height:40px"), item%></td>
+            <td class= "title"><%= link_to item.title, item %></td>
+            <td ><a href = '/cart/remove/<%=item.id%>'>Remove from cart</a></td>
+            <td class = "price"><%= number_to_currency(item.price, :unit => "€")%></td>
+            <td class = "quantity"><%= quantity%><a href = "/cart/decrease/<%= item.id%>"> Decrease</a></td>
+            <td class = "price"><%= number_to_currency(quantity * item.price, :unit => "€")%></td>
+        
+        </tr>    
+        <% total += quantity * item.price%>
+        <% end %>
+        <tr>Grand total: <%= number_to_currency(total, :unit => "€")%></tr>
+    
+    </table>
+   
+    <p> <a href = "/items" class = "button">Continue Shopping</a></p>
+</div>
