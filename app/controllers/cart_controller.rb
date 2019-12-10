@@ -70,5 +70,10 @@ class CartController < ApplicationController
     @orderitems = Orderitem.where(order_id: Order.last)
     session[:cart] = nil
   end
+  
+  def emptyCart
+    session[:cart] = nil
+    redirect_to :action => :index
+  end
 
 end

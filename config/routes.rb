@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   end  
   
   get 'checkout' => 'cart#createOrder'
+  get 'empty' => 'cart#emptyCart'
+  post '/search' => 'items#search'
   get 'cart/index'
+  
+  get '/paid/:id' => 'static_pages#paid'
+  
+  get '/paypalPayment/:id' => 'static_pages#paypalPayment'
 
   resources :items
   get '/login' => 'user#login'

@@ -60,7 +60,10 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def search
+    st = "%#{params[:q]}%" 
+    @items = Item.where("title like?", st)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
