@@ -42,7 +42,8 @@ li a {
     
     margin: auto;
     width:80%;
-    border: 3px solid #b3e0ff;
+    border: 15px solid #eba834;
+     
     padding: 10px;
     text-align: center;
 }
@@ -52,10 +53,14 @@ li a {
 
 .foot {
     min-height: 80px;
-    background-color: #b3e0ff;
+    background-color: #eba834;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: white;
     overflow: auto;
+    border-radius: 8px;
     
     
 }
@@ -73,12 +78,13 @@ li a {
     text-align: center;
     
     
+    
 }
 
 
 #itemsContainer h1 {
    display: block;
-    color: #4CAF50;
+    color: #000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -95,6 +101,8 @@ li a {
     width: 22%;
     padding:10px;
     min-height: 300px;
+    
+    border: 5px solid #eba834;
    
 }
 
@@ -112,7 +120,7 @@ li a {
 
 .itemhols p {
    display: block;
-    color: #4CAF50;
+    color: #2b2c2e;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -132,7 +140,7 @@ li a {
 
 
 .button {
-    background-color: #4CAF50;
+    background-color: #eba834;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -142,6 +150,7 @@ li a {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8%;
 }
 
 #customers {
