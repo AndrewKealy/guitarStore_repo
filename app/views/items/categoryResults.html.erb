@@ -1,9 +1,9 @@
-<%= provide(:title, "Products") %>
+<%= provide(:title, "Brands") %>
 <p id="notice"><%= notice %></p>
 
  <div id="itemsContainer">
   
-  <h1>Products</h1>
+  <h1><%= params[:category] %></h1>
      
       <% @items.each do |item| %>
       <div class="itemhols">

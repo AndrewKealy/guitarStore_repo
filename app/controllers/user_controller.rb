@@ -10,7 +10,7 @@ class UserController < ApplicationController
     def logout
        session[:login]=nil
        session[:cart]=nil
-       flash[:notice]="You are logged out"
+       flash[:notice]="Administrator is logged out"
        redirect_to :controller => :items
         
         

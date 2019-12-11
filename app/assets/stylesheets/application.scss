@@ -1,3 +1,6 @@
+@import "bootstrap";
+
+
 .headSec {
         background: url("/assets/Site/guitarCourse.jpg");
     background-repeat: no-repeat;
@@ -150,7 +153,7 @@ li a {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 8%;
+    border-radius: 8px;
 }
 
 #customers {

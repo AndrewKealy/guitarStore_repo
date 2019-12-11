@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -15,6 +16,8 @@
       <ul>
         <li><%= link_to 'Home', '/' %> </li>
         <li><%= link_to 'Products', '/items' %> </li>
+        <li><%= link_to 'Brands', '/brands' %> </li>
+         <li><%= link_to 'Categories', '/categories' %> </li>
         <li><%= link_to 'View Orders', orders_path %> </li>
         <li><%= link_to 'View Cart', '/cart/index' %> </li>
         <li><%= link_to 'About', about_path %> </li>

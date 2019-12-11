@@ -64,6 +64,17 @@ class ItemsController < ApplicationController
     st = "%#{params[:q]}%" 
     @items = Item.where("title like?", st)
   end
+  
+  def brandResults
+     @items = Item.where(brand: params[:brand])
+     puts params[:brand]
+  end
+  
+    def categoryResults
+     @items = Item.where(category: params[:category])
+     puts params[:category]
+    end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item

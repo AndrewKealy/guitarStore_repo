@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get '/login' => 'user#login'
   get '/logout' => 'user#logout'
   
-  
+  get '/brands' => 'static_pages#brands'
+  get '/categories' => 'static_pages#categories'
   get '/help' => 'static_pages#help'
 
   get '/about' => 'static_pages#about'
@@ -32,6 +33,8 @@ Rails.application.routes.draw do
   
   get '/cart/remove/:id' => 'cart#remove'
   get '/cart/decrease/:id' => 'cart#decrease'
+  get 'items/brand/:brand' => 'items#brandResults'
+    get 'items/categories/:category' => 'items#categoryResults'
 
   root :to => 'site#home'
 
