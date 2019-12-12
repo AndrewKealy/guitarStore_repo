@@ -23,10 +23,12 @@
                 <%= number_to_currency(item.price, :unit => "€")%>
             </div>
             <div class = "links">
-                <% if session[:login]==1 %>
+                <% if current_user && current_user.admin %>
                 <%= link_to 'Edit', edit_item_path(item) %>              
                 <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% else %>
+                <a href = "/cart/<%=item.id%>">Add to Cart</a>
+                <% end %>
+                <% if current_user && !current_user.admin  %>
                 <a href = "/cart/<%=item.id%>">Add to Cart</a>
                 <%end%>
             </div>

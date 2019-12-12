@@ -22,7 +22,7 @@
          <a href = "/cart/<%= item.id%>" class = "button">Add to Cart</a> 
          <% end %> 
          <%= link_to 'Show',  item, :class => "button", :role => "button" %>
-         <% if session[:login]==1 %> 
+         <% if current_user && current_user.admin %> 
          <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
          <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
          <% end %>
@@ -34,6 +34,6 @@
 </div>
 
 <br>
-<% if session[:login]==1 %>
+<% if current_user && current_user.admin %>
 <%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
 <% end %>

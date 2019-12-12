@@ -24,6 +24,8 @@
     </table>
    
     <p> <a href = "/items" class = "button">Continue Shopping</a></p>
+    <% if current_user %>
     <a href = "/checkout" class = "button">Checkout</a>
+    <% end  %>
     <a href = "/empty" class = "button">Empty cart</a>
 </div>

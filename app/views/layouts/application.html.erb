@@ -22,11 +22,15 @@
         <li><%= link_to 'View Cart', '/cart/index' %> </li>
         <li><%= link_to 'About', about_path %> </li>
         <li><%= link_to 'Help', help_path %> </li>
+        <li><%= link_to 'Comments', comments_path %> </li>
         <% if session[:login]==1 %>
+       
+      <% if false %>
         <li><%= link_to 'Admin log out', logout_path %> </li>
         <% else %>
         <li><%= link_to 'Admin log in', login_path %> </li>
         <% end %>
+      <% end %>
         <% if user_signed_in? %>
         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %> </li>

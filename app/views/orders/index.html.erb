@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
-
+<% if current_user  %>
 <table>
   <thead>
     <tr>
@@ -17,16 +17,21 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.order_date %></td>
-        <td><%= order.user %></td>
+        <td><%= order.user.email.split('@')[0].capitalize %></td>
         <td><%= order.status %></td>
         <td><%= link_to 'Show', order %></td>
+      <% if current_user.admin %>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>  
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%else%>
+<h1>Please log in to view orders</h1>
+<%end%>
 <br>
-
+<% if current_user && current_user.admin %>
 <%= link_to 'New Order', new_order_path %>
+<%end%>
